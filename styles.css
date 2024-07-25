@@ -1,0 +1,91 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure the navbar is always on top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6347;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.nav-link:hover {
+    color: #ff6347;
+}
+
+.nav-link.active {
+    color: #ff6347;
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 20px;
+    margin-top: 60px; /* Adjust for fixed navbar */
+}
+
+#home, #about, #services, #contact {
+    padding: 100px 20px;
+    margin-top: 50px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Navbar Scrolled State */
+.nav-scrolled {
+    background-color: #000; /* Background color change when scrolled */
+}
